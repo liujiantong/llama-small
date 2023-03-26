@@ -1,6 +1,6 @@
 # LLaMA
 
-Fork from meta **[llama](https://github.com/facebookresearch/llama)**
+Fork from Meta **[LLaMA](https://github.com/facebookresearch/llama)**
 
 This repository is intended as a minimal, hackable and readable example to load [LLaMA](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/) ([arXiv](https://arxiv.org/abs/2302.13971v1)) models and run inference.
 In order to download the checkpoints and tokenizer, fill this [google form](https://forms.gle/jk851eBVbX1m5TAv5)
@@ -39,7 +39,7 @@ Different models require different MP values:
 
 ## Reshard 7B model
 
-To reshard your model, copy reshard.py script into your LLaMA checkpoints directory (the parent directory containing 7B, 13B, 30B and 65B). Now run the following command:
+To run 7B model with MP=1 on 2 GPUs, reshard your model and copy reshard.py script into your LLaMA checkpoints directory. Now run the following command:
 
 ```bash
 mkdir 7B_Split
