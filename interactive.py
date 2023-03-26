@@ -116,7 +116,8 @@ cheese =>""",
             continue
 
         results = generator.generate(
-            prompts, max_gen_len=256, temperature=temperature, top_p=top_p
+            # prompts, max_gen_len=256, temperature=temperature, top_p=top_p
+            [prompt], max_gen_len=256, temperature=temperature, top_p=top_p
         )
 
         for result in results:
