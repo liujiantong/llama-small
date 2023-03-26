@@ -109,12 +109,19 @@ peppermint => menthe poivrée
 plush girafe => girafe peluche
 
 cheese =>""",
+        "The sun goes down, and finally Gauss and Curie find time to relax and discuss after an exhausting day of work.",
+        "write a conversation between the sun and pluto",
+        "What are 3 popular chess openings?",
+        "Write a shouting match between Julius Caesar and Napoleon",
+        "Send an email requesting that people use language models responsibly.",
+        "Who are 5 people you would like to meet?",
     ]
 
     for prmpt in prompts:
         results = generator.generate(
             [prmpt], max_gen_len=256, temperature=temperature, top_p=top_p
         )
+        print(f"Prompt: {prmpt}\n")
         print(results[0])
         print("\n==================================\n")
 
