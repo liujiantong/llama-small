@@ -72,6 +72,9 @@ def main(
     max_batch_size: int = 16,
     # max_batch_size: int = 32,
 ):
+    """
+    question/answer one by one
+    """
     local_rank, world_size = setup_model_parallel()
     if local_rank > 0:
         sys.stdout = open(os.devnull, "w")
