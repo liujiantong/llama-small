@@ -69,7 +69,8 @@ def main(
     temperature: float = 0.8,
     top_p: float = 0.95,
     max_seq_len: int = 512,
-    max_batch_size: int = 32,
+    max_batch_size: int = 16,
+    # max_batch_size: int = 32,
 ):
     local_rank, world_size = setup_model_parallel()
     if local_rank > 0:
