@@ -59,7 +59,7 @@ def load(
     model.load_state_dict(checkpoint, strict=False)
 
     generator = LLaMA(model, tokenizer)
-    print(f"Loaded in {time.time() - start_time:.2f} seconds")
+    print(f"Loaded in {time.time() - start_time:.2f} seconds\n")
     return generator
 
 
@@ -69,7 +69,7 @@ def main(
     temperature: float = 0.8,
     top_p: float = 0.95,
     max_seq_len: int = 512,
-    max_batch_size: int = 16,
+    max_batch_size: int = 10,
     # max_batch_size: int = 32,
 ):
     local_rank, world_size = setup_model_parallel()
@@ -107,6 +107,8 @@ plush girafe => girafe peluche
 
 cheese =>""",
     ]
+
+    time_s = time.time()
     results = generator.generate(
         prompts, max_gen_len=256, temperature=temperature, top_p=top_p
     )
@@ -114,6 +116,7 @@ cheese =>""",
     for result in results:
         print(result)
         print("\n==================================\n")
+    print(f"Run in {time.time() - time_s:.2f} seconds\n")
 
 
 if __name__ == "__main__":

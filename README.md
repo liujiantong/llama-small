@@ -43,7 +43,7 @@ To run 7B model with MP=1 on 2 GPUs, reshard your model and copy reshard.py scri
 
 ```bash
 mkdir 7B_MP2
-reshard.py 2 ./7B/ ./7B_MP2/
+python reshard.py 2 ./7B/ ./7B_MP2/
 ./start_7B.sh
 ```
 
